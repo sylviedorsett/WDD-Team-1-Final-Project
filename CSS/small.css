@@ -62,8 +62,23 @@ main section {
 
 section div {
     border:2px solid #9bc53d ;
-    box-shadow: 0 0 30px #13293D;
+    box-shadow: 0 0 15px #13293D;
+    border-radius: 15px;
     padding: 2em;
+}
+
+/*Buttons*/
+button {
+    padding: .5em 1em;
+    background-color: #9bc53d;
+    color:#13293D;
+    margin: auto;
+    display: block;
+    font-size: 1.2em;
+    border: 2px solid #13293D;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #13293D;
 }
 
 /*Footer*/
