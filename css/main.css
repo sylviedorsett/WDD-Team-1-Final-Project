@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Spline+Sans:wght@400;700&display=swap');
+
+:root {
+    /* COLORS */
+    --darkblue: #13293D;
+    --blue: #5BC0EB;
+    --yellow: #FDE74C;
+    --green: #9BC53D;
+    /* FONTS */
+    --main-font: 'Spline Sans', sans-serif;
+    --secondary-font: 'Poppins', sans-serif;
+}
+
+/* GLOBAL */
+body {
+    color: var(--darkblue);
+    font-family: var(--secondary-font);
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--main-font);
+} p {
+    font-family: var(--secondary-font);
+} button {
+    background-color: var(--green);
+    padding: 1rem 0.8rem;
+    border: 0;
+    border-radius: 8px;
+}
+header, footer {
+    color: white;
+    background-color: var(--darkblue);
+} main {
+    text-align: center;
+}
+
+/* HEADER */
+header h1 {
+    margin: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+} .logo-div {
+    vertical-align: middle;
+}
+
+/* MAIN */
+main section h2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+.location input[type=text] {
+    padding: 0.5rem 1rem;
+    width: 60%;
+    margin: 4rem 0;
+} 
+.user-location:hover, .location button:hover {
+    cursor: pointer;
+}

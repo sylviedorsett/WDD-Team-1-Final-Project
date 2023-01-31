@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Weather On The Go</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="./CSS/main.css">
         <link rel="stylesheet" href="./CSS/small.css">
         <link rel="stylesheet" href="./CSS/large.css">
@@ -11,14 +12,20 @@
     </head>
     <body>
         <header class="header">
-            <div class="logo-div"></div>
+            <div class="logo-div">
+                <img src="/library/logo wo bg.png" alt="Weather On The Go logo" width="100rem">
+            </div>
             <h1>Weather On The Go</h1>
         </header>
         <main class="main">
             <section class="location">
                 <h3>To access weather using your location click here:</h3>
                 <button class="user-location">Access My Current Location</button>
-                <!--HTML for Search Bar will go here-->
+                <!--Search Bar-->
+                <form action="">
+                    <input type="text" placeholder="Enter City..">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </section>
             <section>
                 <h2><u>Weather Summary</u></h2>
