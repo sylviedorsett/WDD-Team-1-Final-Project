@@ -1,0 +1,80 @@
+:root {
+    /*Colors*/
+    --darkblue: "#13293d";
+    --lightblue: "#5bc0eb";
+    --yellow: "#fde74c";
+    --green: "#9bc53d";
+
+    /*Font*/
+    --headerFont: "Spline Sans Mono", monospace;
+    --pFont: "Poppins", sans-serif;
+    --font-base: 18px;
+    --small-font: 0.8em;
+    --large-font: 1.2em;
+}
+
+html {
+    line-height: 1.5;
+    font-family: "Spline Sans Mono";
+}
+
+/*Body*/
+body {
+    color: #13293D;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/*Header*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background-color: #13293d;
+    color: white;
+    padding: .5rem;
+    text-align: center;
+}
+
+header img {
+    margin-right: 2rem;
+}
+
+/*Main*/
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+section div {
+    border:2px solid #9bc53d ;
+    box-shadow: 0 0 30px #13293D;
+    padding: 2em;
+}
+
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background-color: #13293D;
+    color: white;
+    padding: .5rem;
+    text-align: center;
+}
