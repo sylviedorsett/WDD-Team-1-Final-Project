@@ -75,6 +75,10 @@ footer {
     height: fit-content;
     background-color: #13293D;
     color: white;
-    padding: .5rem;
+    padding: 2rem;
     text-align: center;
+}
+
+footer p {
+    margin: 0;
 }
