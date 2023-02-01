@@ -11,7 +11,7 @@ async function convertToJson(res) {
     }
   }
 
-export default class WeatherSummary {
+class WeatherSummary {
     constructor() {
         //from Local Storage get the latitude, longitude, 
         //and units of measurement preference for the degrees
