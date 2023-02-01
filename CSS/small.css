@@ -23,7 +23,7 @@ body {
     color: #13293D;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 /*Header*/
@@ -50,7 +50,11 @@ main {
     justify-content: center;
     align-items: center;
     height: fit-content;
-    
+    margin: auto 0;
+}
+
+h3 {
+    text-align: center;
 }
 
 main section {
@@ -58,6 +62,7 @@ main section {
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
+    margin: auto 0;
 }
 
 section div {
