@@ -1,6 +1,3 @@
-
-//import {getLocalStorage} from "utils.js";
-
 //A function to convert responses to json and checks if ok
 async function convertToJson(res) {
     const data = await res.json();
@@ -92,11 +89,7 @@ class WeatherSummary {
     }    
 }
 
-
-
 const weather_summary_placeholder = new WeatherSummary("51.5085", "-0.1257", "metric");
 weather_summary_placeholder.init();
 
 
-//Use this code below once we have grabbed the user's input for a city:
-//const weatherSummary = new WeatherSummary(getLocalStorage("lat"), getLocalStorage("long"), getLocalStorage("degree-preference"));
