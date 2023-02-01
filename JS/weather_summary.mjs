@@ -1,5 +1,5 @@
 
-import {getLocalStorage} from utils.js;
+//import {getLocalStorage} from "utils.js";
 
 //A function to convert responses to json and checks if ok
 async function convertToJson(res) {
