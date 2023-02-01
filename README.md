@@ -23,7 +23,6 @@ index.html
     five_day.js ()
     show.js ()
     map.js ()
-    utils.js ()
     
 README.md
 ```
