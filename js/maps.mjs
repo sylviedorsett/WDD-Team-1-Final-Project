@@ -16,8 +16,8 @@ class Maps {
 
     init() {
         //create the urls for the maps
-        this.rainMapURL = createURL("precipitation_new");
-        this.cloudMapURL = createURL("clouds_new");
+        this.rainMapURL = this.createURL("precipitation_new");
+        this.cloudMapURL = this.createURL("clouds_new");
         this.getMaps();       
     }
 
