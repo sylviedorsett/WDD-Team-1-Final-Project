@@ -24,7 +24,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0;
 }
+/*Global*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--main-font);
+} p {
+    font-family: var(--secondary-font);
 
 /*Header*/
 header {
@@ -89,7 +95,7 @@ p {
 
 /*Buttons*/
 button {
-    padding: .5em 1em;
+    padding: 1rem 0.8rem;
     background-color: #9bc53d;
     color:#13293D;
     margin: auto;
@@ -117,3 +123,19 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* Search Bar */
+.location input[type=text] {
+    padding: 1rem 1.5rem;
+    margin: 4rem 0;
+    border-radius: 10px;
+    border: 0;
+    background-color: lightgray;
+    min-width: 40%;
+} 
+.user-location:hover, .location button:hover {
+    cursor: pointer;
+}
+main section:not([class=location]), .five-day-forecast, .maps {
+    padding: 1rem;
+}     
