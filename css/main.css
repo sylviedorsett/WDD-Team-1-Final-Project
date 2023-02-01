@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Spline+Sans:wght@400;700&display=swap');
-
 :root {
     /* COLORS */
     --darkblue: #13293D;
@@ -7,8 +5,8 @@
     --yellow: #FDE74C;
     --green: #9BC53D;
     /* FONTS */
-    --main-font: 'Spline Sans', sans-serif;
-    --secondary-font: 'Poppins', sans-serif;
+    --main-font: "Spline Sans Mono", monospace;
+    --secondary-font: "Poppins", sans-serif;
 }
 
 /* GLOBAL */
@@ -26,6 +24,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem 0.8rem;
     border: 0;
     border-radius: 8px;
+    box-shadow: 2px 2px 2px var(--darkblue);
 }
 header, footer {
     color: white;
@@ -48,15 +47,32 @@ header {
 }
 
 /* MAIN */
+main {
+    padding: 1.5rem;
+}
 main section h2 {
     text-transform: uppercase;
     text-align: center;
 }
+/* search bar */
 .location input[type=text] {
-    padding: 0.5rem 1rem;
-    width: 60%;
+    padding: 1rem 1.5rem;
     margin: 4rem 0;
+    border-radius: 10px;
+    border: 0;
+    background-color: lightgray;
+    min-width: 40%;
 } 
 .user-location:hover, .location button:hover {
     cursor: pointer;
+}
+main section:not([class=location]), .five-day-forecast, .maps {
+    padding: 1rem;
+} 
+/* weather sumary */
+.summary-div {
+    background-color: lightgray;
+    border-radius: 15px;
+    padding: 1rem;
+    min-height: 100px;
 }
