@@ -9,7 +9,7 @@ The project files and folders are organized as follows:
 ```
 index.html 
 +-- CSS     (folder for CSS files)
-    main.css  
+    normalize.css  
     small.css  
     large.css  
 +-- JS     (folder for JS files)

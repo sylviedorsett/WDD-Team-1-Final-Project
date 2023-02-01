@@ -4,24 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Weather On The Go</title>
+        <meta name="description" content="Home Page for Weather on the Go">
         <!-- Icons -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
         <!-- CSS files -->
-        <link rel="stylesheet" href="./css/normalize.css">
-        <link rel="stylesheet" href="./css/main.css">
-        <link rel="stylesheet" href="./css/small.css">
-        <link rel="stylesheet" href="./css/large.css">
+        <link rel="stylesheet" href="CSS/normalize.css">
+        <link rel="stylesheet" href="CSS/small.css">
+        <link rel="stylesheet" href="CSS/large.css">
     </head>
     <body>
         <header class="header">
-            <div class="logo-div">
-                <img src="/library/logo wo bg.png" alt="Weather On The Go logo" width="100rem">
-            </div>
+            <img src="images/weatherlogo.jpeg" alt="Weather On The Go logo" width="100rem">
             <h1>Weather On The Go</h1>
         </header>
+
         <main class="main">
             <section class="location">
                 <h3>To access weather using your location click here:</h3>
@@ -32,20 +33,26 @@
                 <button type="submit"><i class="fa fa-search"></i></button>
                 </form>
             </section>
-            <section>
+             <section>
                 <h2><u>Weather Summary</u></h2>
-                <div class="summary-div">
-
-                </div>
+                <div class="summary-div" id="weather-summary"></div>
             </section>
             <section class="five-day-forecast">
                 <h2><u>5 Day Forecast</u></h2>
+                <div class="forecast-div"></div>
             </section>
             <section class="maps">
                 <h2><u>Weather Maps</u></h2>
+                <div class="maps-div"></div>
             </section>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <p>&copy; <span id="year"></span> | Weather On The Go</p>
+            <p>Prince Chukwu, Sylvie Dorsett, Tery Gasmen, Gunnar Schmidt</p>
+            <p><span id="date-string"></span></p>
+        </footer>
+        <script src="JS/main.js"></script>
+        <script src="JS/header_footer.js"></script>
+        <script src="JS/weather_summary.mjs"></script>
     </body>
-    <script src="./js/main.js"></script>
 </html>
