@@ -1,5 +1,115 @@
-@media only screen and (max-width: 600px) {
-        header h1 {
-            font-size: 1rem;
-        }
+:root {
+    --darkblue:  "#13293d";
+    --lightblue:  "#5bc0eb";
+    --yellow:  "#fde74c";
+    --green:  "#9bc53d";
+    --headerFont:  "Spline Sans Mono", monospace;
+    --pFont:  "Poppins", sans-serif;
+    --font-base:  18px;
+    --small-font:  0.8em;
+    --large-font:  1.2em;
+}
+
+html {
+    line-height: 1.5;
+    font-family: "Spline Sans Mono", monospace;
+}
+
+/*BODY*/
+body {
+    color: rgb(19, 41, 61);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*GLOBALS*/
+h1, h2, h3 {
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-family: "Spline Sans Mono", monospace;
+    text-align: center;
+    
+}
+p {
+    font-family: "Poppins", sans-serif;
+}
+button {
+    background-color: rgb(155, 197, 61);
+    color: rgb(19, 41, 61);
+    display: block;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: rgb(19, 41, 61) 0px 0px 15px;
+    padding: 0.5em 1em;
+    margin: auto;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(19, 41, 61);
+    border-image: initial;
+    border-radius: 15px;
+}
+
+/*HEADER*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background-color: rgb(19, 41, 61);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+}
+header img {
+    margin-right: 2rem;
+}
+
+/*MAIN*/
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    margin: auto 0px;
+}
+main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: auto 0px;
+}
+section div {
+    box-shadow: rgb(19, 41, 61) 0px 0px 15px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(155, 197, 61);
+    border-image: initial;
+    border-radius: 15px;
+    padding: 2em;
+}
+.summary-div {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 3rem;
+}
+
+/*FOOTER*/
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    background-color: rgb(19, 41, 61);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+footer p {
+    margin: 0px;
 }
