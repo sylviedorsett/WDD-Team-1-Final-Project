@@ -93,8 +93,10 @@ class WeatherSummary {
 }
 
 
-//getLocalStorage("lat")
-//getLocalStorage("long")
-//getLocalStorage("degree-preference")
-const weather_summary = new WeatherSummary("51.5085", "-0.1257", "metric");
-weather_summary.init();
+
+const weather_summary_placeholder = new WeatherSummary("51.5085", "-0.1257", "metric");
+weather_summary_placeholder.init();
+
+
+//Use this code below once we have grabbed the user's input for a city:
+//const weatherSummary = new WeatherSummary(getLocalStorage("lat"), getLocalStorage("long"), getLocalStorage("degree-preference"));
