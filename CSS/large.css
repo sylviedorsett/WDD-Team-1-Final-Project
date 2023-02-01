@@ -1,0 +1,10 @@
+@media only screen and (min-width: 601px) {
+    
+    main section:not([class=location]) {
+        margin: 0 5rem;
+    }
+    
+    header {
+        padding: .75rem;
+    }
+}
