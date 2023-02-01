@@ -28,10 +28,24 @@
            <section class="location">
                 <h3>To access weather using your location click here:</h3>
                 <button class="user-location">Access My Current Location</button>
+                <h3>or</h3>
                 <!--Search Bar-->
-                <form action="">
+                <form action="" class="search-form">
                     <input type="text" placeholder="Enter City..">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                    <button type="submit" id="search"><i class="fa fa-search"></i></button>
+                </form>
+            </section>
+            <section>
+                <h3>Please select Celcius or Fahrenheit:</3>
+                <form action="" class="degree-type">
+                    <div class="degree-div">
+                        <label for="Celcius">Celcius</label>
+                        <input type="checkbox" class="checkbox" id="radio-cels">
+                    </div>
+                    <div class="degree-div">
+                        <label for="Fahrenheit">Fahrenheit</label>
+                        <input type="checkbox" class="checkbox" id="radio-fahr">
+                    </div>
                 </form>
             </section>
             <section>

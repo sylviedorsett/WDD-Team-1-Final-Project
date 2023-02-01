@@ -25,12 +25,15 @@ body {
 
 /*GLOBALS*/
 h1, h2, h3 {
-    font-size: 2em;
+    font-size: 2rem;
     margin: 0.67em 0;
     font-family: "Spline Sans Mono", monospace;
-    text-align: center;
-    
+    text-align: center; 
 }
+h3 {
+    font-size: 1.5rem;
+}
+
 p {
     font-family: "Poppins", sans-serif;
 }
@@ -97,6 +100,39 @@ section div {
     flex-direction: column;
     padding: 0.5rem 3rem;
 }
+
+/*SEARCH*/
+.search-form {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+input {
+    padding: .5rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(19, 41, 61);
+    border-radius: 15px 0 0 15px;
+    box-shadow: rgb(19, 41, 61) 0px 0px 15px;
+}
+#search {
+    border-radius: 0 15px 15px 0;
+}
+
+/*DEGREE SELECTION*/
+.degree-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5rem;
+}
+.degree-div {
+    border: none;
+    box-shadow: none;
+    padding: .25rem;
+}
+
 
 /*FOOTER*/
 footer {
