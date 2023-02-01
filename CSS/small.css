@@ -15,7 +15,7 @@
 
 html {
     line-height: 1.5;
-    font-family: "Spline Sans Mono";
+    font-family: 'Spline Sans Mono', monospace;
 }
 
 /*Body*/
@@ -54,6 +54,7 @@ main {
 }
 
 h3 {
+    font-family: 'Spline Sans Mono', monospace;
     text-align: center;
 }
 
@@ -70,6 +71,19 @@ section div {
     box-shadow: 0 0 15px #13293D;
     border-radius: 15px;
     padding: 2em;
+}
+p {
+    font-family: "Poppins", sans-serif;
+}
+
+/*divs*/
+.summary-div {
+    padding: .5rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+.summary-div p {
+    margin: .25rem;
 }
 
 /*Buttons*/
