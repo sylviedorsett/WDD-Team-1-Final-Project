@@ -15,10 +15,10 @@ export default class WeatherSummary {
     constructor() {
         //from Local Storage get the latitude, longitude, 
         //and units of measurement preference for the degrees
-        this.latitude = "57"//getLocalStorage("lat");
-        this.longitude = "-2.15"//getLocalStorage("long");
+        this.latitude = "51.5072°"//getLocalStorage("lat");
+        this.longitude = "0.1276"//getLocalStorage("long");
         this.apiKey = "4491eb92629e7b5e0ac20b732e39129e";
-        this.degreeType = "imperial"//getLocalStorage("degree-preference")
+        this.degreeType = "metric"//getLocalStorage("degree-preference")
     }
 
     async init() {
