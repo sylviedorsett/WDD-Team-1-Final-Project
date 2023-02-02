@@ -13,15 +13,19 @@ export default class GetAPI {
     }
 
     init() {
-      this.city = getLocalStorage("city");
-      this.getGeoAPI();
+      //if user used search bar and we have a city in local storage:
+        this.city = getLocalStorage("city");
+        this.getGeoAPI();
+      //else if user used browser and we have lat and long:
+        this.latitude = getLocalStorage("lat");
+        this.longitude = getLocalStorage("long");
+        
       this.getCurrentWeather();
       this.getForecast();
       this.getMap();
     }
   
     //A function that fetches the geo location of a city
-    //WE NEED TO DO ERROR HANDLING HERE IF THE CITY IS NOT FOUND
     async getGeoAPI() {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=850f85405ab713d96880a077b3067953`);
       const geoAPI = await response.json();
