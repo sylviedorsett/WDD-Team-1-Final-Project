@@ -58,7 +58,7 @@ class Forecast {
     }
     //A function that dynamically renders the five-day-forecast container
     populateSummaries(dataObject) {
-        console.log(dataObject);
+        // console.log(dataObject);
         for(let i in dataObject.list) {
             const htmlString = this.renderSummary(i);
             let newSection = document.createElement("section");
@@ -92,7 +92,5 @@ class Forecast {
 }
 
 
-
-console.log("running")
 const forecast_placeholder = new Forecast("51.5085", "-0.1257", "metric");
 forecast_placeholder.init();
