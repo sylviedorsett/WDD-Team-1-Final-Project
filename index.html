@@ -37,7 +37,7 @@
             </section>
             <section>
                 <h3>Please select Celcius or Fahrenheit:</3>
-                <form action="" class="degree-type">
+                   <form action="" class="degree-type">
                     <div class="degree-div">
                         <label for="Celcius">Celcius</label>
                         <input type="checkbox" class="checkbox" id="radio-cels">
@@ -52,9 +52,9 @@
                 <h2><u>Weather Summary</u></h2>
                 <div class="summary-div" id="weather-summary"></div>
             </section>
-            <section class="five-day-forecast">
+            <section id="five-day-forecast">
                 <h2><u>5 Day Forecast</u></h2>
-                <div class="forecast-div"></div>
+                <div class="forecast-div" id="five-day-forecast-sections"></div>
             </section>
             <section class="maps">
                 <h2><u>Weather Maps</u></h2>
@@ -70,5 +70,6 @@
         <script src="js/header_footer.js"></script>
         <script src="js/weather_summary.mjs"></script>
         <script src="js/maps.mjs"></script>
+        <script src="js/forecast.mjs" type="module"></script>
     </body>
 </html>

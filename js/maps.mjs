@@ -48,5 +48,5 @@ class Maps {
 
 }
 
-const maps = new Maps();
-maps.init();
+// const maps = new Maps();
+// maps.init();
