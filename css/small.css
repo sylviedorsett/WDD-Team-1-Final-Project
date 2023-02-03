@@ -134,6 +134,9 @@ input {
 }
 
 /*5 Day Forecast*/
+#five-day-forecast-sections .hidden {
+    display: none;
+}
 #five-day-forecast-sections.forecast-div {
     box-shadow: none;
     border: none;

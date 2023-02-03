@@ -35,7 +35,9 @@ class Forecast {
         const response = await fetch(url).then(convertToJson);
         this.populateSummaries(response);
     }
-
+    
+    // ***************************Start 3-hour Section*****************************************//
+    
     //A function that returns a string literal to populate the five-day-forecast container
     renderSummary(number) {
         let degreeSymbol = "";
@@ -62,6 +64,7 @@ class Forecast {
             let newSection = document.createElement("section");
             newSection.id = `five-day-forecast-${i}`;
             newSection.className = `five-day-forecast`;
+            newSection.classList.toggle("hidden");
             document.getElementById(`five-day-forecast-sections`).appendChild(newSection);
             document.getElementById(`five-day-forecast-${i}`).innerHTML = htmlString;
             //Use destructoring to enable readable code and pull specific properties from our object
@@ -84,7 +87,12 @@ class Forecast {
             document.getElementById(`windSpeed-${i}`).textContent = `\u00A0\u00A0${Math.ceil(speed)}`;
         }
     }    
+    // ***************************End 3-hour Section*****************************************//
+
 }
+
+
+
 console.log("running")
 const forecast_placeholder = new Forecast("51.5085", "-0.1257", "metric");
 forecast_placeholder.init();
