@@ -58,16 +58,12 @@ class Forecast {
     }
     //A function that dynamically renders the five-day-forecast container
     populateSummaries(dataObject) {
-        // console.log(dataObject);
+        console.log(dataObject);
+        // creating variables for the 5-day forecast cards
         for(let i in dataObject.list) {
-            const htmlString = this.renderSummary(i);
-            let newSection = document.createElement("section");
-            newSection.id = `five-day-forecast-${i}`;
-            newSection.className = `five-day-forecast`;
-            newSection.classList.toggle("hidden");
-            document.getElementById(`five-day-forecast-sections`).appendChild(newSection);
-            document.getElementById(`five-day-forecast-${i}`).innerHTML = htmlString;
+
             //Use destructoring to enable readable code and pull specific properties from our object
+            //getting the data from the dataObject.list, since this is a for loop, each const represents an individual (3) hourly forecast value
             const {temp_max, temp_min } = dataObject.list[i].main;
             const {speed} = dataObject.list[i].wind;
             const weatherImage = dataObject.list[i].weather[0].icon;
@@ -77,14 +73,46 @@ class Forecast {
             const timeOfDay = dt.toLocaleTimeString("en-US", {hour: '2-digit'})
 
 
-            // const {name} = dataObject;
+            
+
+            // Taking the averages of the different days' hourly reports to display for the 5 day forecast
+            if(!document.getElementById(`five-day-forecast-${dayOfWeek}`)){
+                let fiveDayHTML = this.renderSummary(dayOfWeek);
+                let dayAverageSummaryForecast = document.createElement("section");
+                dayAverageSummaryForecast.id = `five-day-forecast-${dayOfWeek}`;
+                dayAverageSummaryForecast.className = "five-day-forecast";
+                document.getElementById(`five-day-forecast-sections`).appendChild(dayAverageSummaryForecast);
+                document.getElementById(`five-day-forecast-${dayOfWeek}`).innerHTML = fiveDayHTML;
+            }
+
+            //grab 5-day averages containers by their id's and populate them with results calculated with data from the API
+            console.log(`day-${dayOfWeek}`, document.getElementById(`day-${dayOfWeek}`))
+            document.getElementById(`day-${dayOfWeek}`).textContent = `${dayOfWeek}`;
+            document.getElementById(`high-temp-${dayOfWeek}`).textContent = `\u00A0\u00A0${Math.floor(temp_max)}`;
+            document.getElementById(`low-temp-${dayOfWeek}`).textContent = `\u00A0\u00A0${Math.floor(temp_min)}`;
+            document.getElementById(`weatherImage-${dayOfWeek}`).src = `http://openweathermap.org/img/wn/${weatherImage}@2x.png`
+            document.getElementById(`weathDesc-${dayOfWeek}`).textContent = `${weathDesc}`;
+            document.getElementById(`windSpeed-${dayOfWeek}`).textContent = `\u00A0\u00A0${Math.ceil(speed)}`;
+            
+
+            const htmlString = this.renderSummary(i);
+            let newSection = document.createElement("section");
+            newSection.id = `five-day-forecast-${i}`;
+            newSection.className = `five-day-forecast`;
+            newSection.classList.toggle("hidden");
+            document.getElementById(`five-day-forecast-sections`).appendChild(newSection);
+            document.getElementById(`five-day-forecast-${i}`).innerHTML = htmlString;
+            
+
+
             //grab containers by their id's and populate them with data from the API
-            document.getElementById(`day-${i}`).textContent = `${dayOfWeek} ${timeOfDay}`;
+            document.getElementById(`day-${i}`).textContent = `${dayOfWeek.substring(0,3)} ${timeOfDay}`;
             document.getElementById(`high-temp-${i}`).textContent = `\u00A0\u00A0${Math.floor(temp_max)}`;
             document.getElementById(`low-temp-${i}`).textContent = `\u00A0\u00A0${Math.floor(temp_min)}`;
             document.getElementById(`weatherImage-${i}`).src = `http://openweathermap.org/img/wn/${weatherImage}@2x.png`
             document.getElementById(`weathDesc-${i}`).textContent = `${weathDesc}`;
             document.getElementById(`windSpeed-${i}`).textContent = `\u00A0\u00A0${Math.ceil(speed)}`;
+
         }
     }    
     // ***************************End 3-hour Section*****************************************//
