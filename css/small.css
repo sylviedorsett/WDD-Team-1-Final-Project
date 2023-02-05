@@ -134,6 +134,10 @@ input {
 }
 
 /*5 Day Forecast*/
+#five-day-forecast span {
+    margin: 0;
+}
+
 #five-day-forecast-sections .hidden {
     display: none;
 }
@@ -161,7 +165,7 @@ input {
     border-color: rgb(155, 197, 61);
     border-image: initial;
     border-radius: 15px;
-    padding: 1.5em;
+    padding: 1.5em 1.5em 0em 1.5em;
     margin: 0;
 }
 .five-day-forecast * {
@@ -191,6 +195,15 @@ input {
 .five-day-forecast img {
     grid-column: 2/3;
     grid-row: 2/4;
+}
+.five-day-forecast button {
+    grid-column: 1/4;
+    grid-row: 4/5;
+    margin: 5px auto;
+    font-size: .8em;
+    box-shadow: rgb(19, 41, 61) 0px 3px 3.75px;
+    float: right;
+
 }
 /*FOOTER*/
 footer {
