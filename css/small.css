@@ -133,6 +133,9 @@ input {
     padding: .25rem;
 }
 
+.maps {
+    display: none;
+}
 
 /*FOOTER*/
 footer {
