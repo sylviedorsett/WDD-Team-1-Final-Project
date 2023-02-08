@@ -96,12 +96,13 @@ class Forecast {
                 document.getElementById(`five-day-forecast-sections`).appendChild(dayAverageSummaryForecast);
                 document.getElementById(`five-day-forecast-${dayOfWeek}`).innerHTML = fiveDayHTML;
                 document.getElementById(`day-${dayOfWeek}`).textContent = `${dayOfWeek}`;
-                document.getElementById(`show-hide-button-${dayOfWeek}`).addEventListener("click", () => {for(let i in document.getElementsByClassName(`${dayOfWeek}`)){document.getElementsByClassName(`${dayOfWeek}`)[i].classList.toggle("hidden")}});
-                newDay = true;
-            }
-
-            // Calculating highs, lows, and averages for 5-day
-            if(newDay){
+                document.getElementById(`show-hide-button-${dayOfWeek}`).addEventListener("click", () => {
+                    for(let i in document.getElementsByClassName(`${dayOfWeek}`)){
+                        let elements = Array.from(document.getElementsByClassName(`${dayOfWeek}`));
+                        elements.forEach(element => {
+                            element.classList.toggle("hidden");
+                        });
+                    }}); // original = document.getElementsByClassName(`${dayOfWeek}`)[i].classList.toggle("hidden"), this did not work because getElementsByClassName returns a list that is not only the elements we would expect, like for example the length element is part of what it returns and you can't call the classList method on the length and other different elements it brings up... the Array.from method solved this for us by converting it to an array of only the elements we would expect/want (in this case at least)
                 // resetting variables for new day
                 high_temp_max = -1000;
                 low_temp_min = 1000;
@@ -110,6 +111,8 @@ class Forecast {
                 wind_speeds = [];
                 average_wind_speed = 0;
             }
+
+            // Calculating highs, lows, and averages for 5-day
             // Low for day
             if(low_temp_min > temp_min){
                 low_temp_min = temp_min;
@@ -128,8 +131,6 @@ class Forecast {
             wind_speeds.push(speed);
             average_wind_speed = average(wind_speeds);
 
-            // variable to manage calculating highs and lows for individual days, resets to true in the if statement that checks if the document already has a section element for the particular day roughly thirty lines above this as of right now.
-            newDay = false;
 
             //grab 5-day averages containers by their id's and populate them with results calculated with data from the API
             
