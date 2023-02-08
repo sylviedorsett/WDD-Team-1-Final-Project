@@ -133,11 +133,13 @@ input {
     padding: .25rem;
 }
 
+.maps {
+    display: none;
+}
+
 /*5 Day Forecast*/
 #five-day-forecast span {
     margin: 0;
-}
-
 #five-day-forecast-sections .hidden {
     display: none;
 }

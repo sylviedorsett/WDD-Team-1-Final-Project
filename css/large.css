@@ -3,6 +3,7 @@
         margin: 0 5rem;
     }
 
+
     /*5 Day Forecast Grids etc.*/
     #five-day-forecast-sections section {
     grid-template-columns: 22% 17% 21% 40%;
@@ -45,6 +46,22 @@
         font-size: .8em;
         box-shadow: rgb(19, 41, 61) 0px 3px 3.75px;
         float: right;
-    
+
+    /*Maps*/
+    .maps {
+        display: inline-block
+    }
+    .maps-div {
+        padding: 0;
+        background-color: #13293d;
+    }
+
+    iframe {
+        border-radius: 15px;
+        border: none;
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+
     }
 }

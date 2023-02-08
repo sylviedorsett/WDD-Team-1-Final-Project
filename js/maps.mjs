@@ -8,7 +8,7 @@ async function convertToJson(res) {
   }
 
 class Maps {
-    constructor(lat, long, deg) {
+    constructor() {
         this.apiKey = "4491eb92629e7b5e0ac20b732e39129e";
         this.rainMapURL = "";
         this.cloudMapURL = "";
@@ -48,5 +48,7 @@ class Maps {
 
 }
 
-// const maps = new Maps();
-// maps.init();
+
+//const maps = new Maps();
+//maps.init();
+
