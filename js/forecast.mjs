@@ -64,7 +64,7 @@ class Forecast {
     
     //A function that dynamically renders the five-day-forecast container
     populateSummaries(dataObject) {
-        console.log(dataObject);
+        // console.log(dataObject);
         // creating variables for the 5-day forecast cards
         let high_temp_max = -1000;
         let low_temp_min = 1000;
