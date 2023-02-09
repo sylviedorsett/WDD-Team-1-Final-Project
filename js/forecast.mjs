@@ -97,12 +97,10 @@ class Forecast {
                 document.getElementById(`five-day-forecast-${dayOfWeek}`).innerHTML = fiveDayHTML;
                 document.getElementById(`day-${dayOfWeek}`).textContent = `${dayOfWeek}`;
                 document.getElementById(`show-hide-button-${dayOfWeek}`).addEventListener("click", () => {
-                    for(let i in document.getElementsByClassName(`${dayOfWeek}`)){
-                        let elements = Array.from(document.getElementsByClassName(`${dayOfWeek}`));
-                        elements.forEach(element => {
-                            element.classList.toggle("hidden");
-                        });
-                    }}); // original = document.getElementsByClassName(`${dayOfWeek}`)[i].classList.toggle("hidden"), this did not work because getElementsByClassName returns a list that is not only the elements we would expect, like for example the length element is part of what it returns and you can't call the classList method on the length and other different elements it brings up... the Array.from method solved this for us by converting it to an array of only the elements we would expect/want (in this case at least)
+                    Array.from(document.getElementsByClassName(`${dayOfWeek}`)).forEach(element => {
+                      element.classList.toggle("hidden");
+                    });
+                  }); // original = document.getElementsByClassName(`${dayOfWeek}`)[i].classList.toggle("hidden"), this did not work because getElementsByClassName returns a list that is not only the elements we would expect, like for example the length element is part of what it returns and you can't call the classList method on the length and other different elements it brings up... the Array.from method solved this for us by converting it to an array of only the elements we would expect/want (in this case at least)
                 // resetting variables for new day
                 high_temp_max = -1000;
                 low_temp_min = 1000;
