@@ -30,10 +30,13 @@
                 <button class="user-location">Access My Current Location</button>
                 <h3>or</h3>
                 <!--Search Bar-->
-                <form action="" class="search-form">
-                    <input type="text" placeholder="Enter City..">
-                    <button type="submit" id="search"><i class="fa fa-search"></i></button>
-                </form>
+                <section class="search">
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Enter City.." id="search-input">
+                        <button type="submit" id="search"><i class="fa fa-search"></i></button>
+                    </form>
+                    <ul id="suggest-list"></ul>
+                </section>
             </section>
             <section>
                 <h3>Please select Celcius or Fahrenheit:</3>
@@ -72,6 +75,7 @@
         <script src="js/header_footer.js"></script>
         <script src="js/weather_summary.mjs"></script>
         <script src="js/maps.mjs"></script>
+        <script src="js/search.js"></script>
         <script src="js/forecast.mjs" type="module"></script>
     </body>
 </html>
