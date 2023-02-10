@@ -89,7 +89,7 @@ class WeatherSummary {
     }    
 }
 
-//const weather_summary_placeholder = new WeatherSummary("51.5085", "-0.1257", "metric");
-//weather_summary_placeholder.init();
+const weather_summary_placeholder = new WeatherSummary("51.5085", "-0.1257", "metric");
+weather_summary_placeholder.init();
 
 
