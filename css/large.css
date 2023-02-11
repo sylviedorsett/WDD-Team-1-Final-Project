@@ -1,13 +1,27 @@
 @media only screen and (min-width: 601px) {
-    main section:not([class=location]) {
-        margin: 0 5rem;
+    
+
+    #five-day-forecast-sections{
+        display: flex;
+        flex-direction: row;
+        margin: 0;
     }
 
+    #five-day-forecast-sections section {
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+        width: 150px;
+    }
 
-    /*5 Day Forecast Grids etc.*/
+    
+
+   
+    /*5 Day Forecast Grids etc.
     #five-day-forecast-sections section {
     grid-template-columns: 22% 17% 21% 40%;
     grid-template-rows: auto auto 1.5em;
+  
     }
     .five-day-forecast * {
         margin: .1em 1em;
@@ -46,7 +60,8 @@
         font-size: .8em;
         box-shadow: rgb(19, 41, 61) 0px 3px 3.75px;
         float: right;
-    }
+    }*/
+
     /*Maps*/
     .maps {
         display: inline-block
