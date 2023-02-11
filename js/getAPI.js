@@ -19,10 +19,9 @@ export default class GetAPI {
       //else if user used browser and we have lat and long:
         this.latitude = getLocalStorage("lat");
         this.longitude = getLocalStorage("long");
-        
-      this.getCurrentWeather();
-      this.getForecast();
-      this.getMap();
+        this.getCurrentWeather();
+        this.getForecast();
+        this.getMap();
     }
   
     //A function that fetches the geo location of a city
