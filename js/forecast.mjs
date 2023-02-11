@@ -72,7 +72,7 @@ class Forecast {
         let most_common_weather = {"icon":"", "weather_desc":""};
         let wind_speeds = [];
         let average_wind_speed = 0;
-        let newDay = true;
+        let dayNumber = 0
         for(let i in dataObject.list) {
 
             //Use destructoring to enable readable code and pull specific properties from our object
@@ -89,27 +89,29 @@ class Forecast {
 
             // Taking the averages of the different days' hourly reports to display for the 5 day forecast
             if(!document.getElementById(`five-day-forecast-${dayOfWeek}`)){
-                let fiveDayHTML = this.renderSummary(dayOfWeek);
-                let dayAverageSummaryForecast = document.createElement("section");
-                dayAverageSummaryForecast.id = `five-day-forecast-${dayOfWeek}`;
-                dayAverageSummaryForecast.className = "five-day-forecast";
-                document.getElementById(`five-day-forecast-sections`).appendChild(dayAverageSummaryForecast);
-                document.getElementById(`five-day-forecast-${dayOfWeek}`).innerHTML = fiveDayHTML;
-                document.getElementById(`day-${dayOfWeek}`).textContent = `${dayOfWeek}`;
-                document.getElementById(`show-hide-button-${dayOfWeek}`).addEventListener("click", () => {
-                    Array.from(document.getElementsByClassName(`${dayOfWeek}`)).forEach(element => {
-                      element.classList.toggle("hidden");
-                    });
-                  }); // original = document.getElementsByClassName(`${dayOfWeek}`)[i].classList.toggle("hidden"), this did not work because getElementsByClassName returns a list that is not only the elements we would expect, like for example the length element is part of what it returns and you can't call the classList method on the length and other different elements it brings up... the Array.from method solved this for us by converting it to an array of only the elements we would expect/want (in this case at least)
-                // resetting variables for new day
-                high_temp_max = -1000;
-                low_temp_min = 1000;
-                most_common_weather_obj_arrays = {"icon":[], "weather_desc":[]};
-                most_common_weather = {"icon":"", "weather_desc":""};
-                wind_speeds = [];
-                average_wind_speed = 0;
+                dayNumber += 1;
+                if (dayNumber <= 5){
+                    let fiveDayHTML = this.renderSummary(dayOfWeek);
+                    let dayAverageSummaryForecast = document.createElement("section");
+                    dayAverageSummaryForecast.id = `five-day-forecast-${dayOfWeek}`;
+                    dayAverageSummaryForecast.className = "five-day-forecast";
+                    document.getElementById(`five-day-forecast-sections`).appendChild(dayAverageSummaryForecast);
+                    document.getElementById(`five-day-forecast-${dayOfWeek}`).innerHTML = fiveDayHTML;
+                    document.getElementById(`day-${dayOfWeek}`).textContent = `${dayOfWeek}`;
+                    document.getElementById(`show-hide-button-${dayOfWeek}`).addEventListener("click", () => {
+                        Array.from(document.getElementsByClassName(`${dayOfWeek}`)).forEach(element => {
+                        element.classList.toggle("hidden");
+                        });
+                    }); // original = document.getElementsByClassName(`${dayOfWeek}`)[i].classList.toggle("hidden"), this did not work because getElementsByClassName returns a list that is not only the elements we would expect, like for example the length element is part of what it returns and you can't call the classList method on the length and other different elements it brings up... the Array.from method solved this for us by converting it to an array of only the elements we would expect/want (in this case at least)
+                    // resetting variables for new day
+                    high_temp_max = -1000;
+                    low_temp_min = 1000;
+                    most_common_weather_obj_arrays = {"icon":[], "weather_desc":[]};
+                    most_common_weather = {"icon":"", "weather_desc":""};
+                    wind_speeds = [];
+                    average_wind_speed = 0;
+                } else { break}
             }
-
             // Calculating highs, lows, and averages for 5-day
             // Low for day
             if(low_temp_min > temp_min){
@@ -163,7 +165,6 @@ class Forecast {
             document.getElementById(`weatherImage-${i}`).src = `http://openweathermap.org/img/wn/${weatherImage}@2x.png`
             document.getElementById(`weathDesc-${i}`).textContent = `${weathDesc}`;
             document.getElementById(`windSpeed-${i}`).textContent = `\u00A0\u00A0${Math.ceil(speed)}`;
-
         }
     }    
     // ***************************End 3-hour Section*****************************************//
