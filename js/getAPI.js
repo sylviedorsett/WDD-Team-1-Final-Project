@@ -1,5 +1,5 @@
 //Import all Classes
-import {getLocalStorage} from ".utils.mjs";
+import {getLocalStorage} from "./utils.mjs";
 import WeatherSummary from "./weather_summary.mjs";
 import Forecast from "./forecast.mjs";
 import Maps from "./maps.mjs";
@@ -55,4 +55,6 @@ export default class GetAPI {
       map.init();
     }
   }
+
+
   
