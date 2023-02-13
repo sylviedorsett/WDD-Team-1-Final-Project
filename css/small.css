@@ -171,6 +171,7 @@ input {
     display: block;
     width: 100%;
 }
+
 #five-day-forecast-sections section {
     display: grid;
     box-shadow: rgb(19, 41, 61) 0px 0px 15px;
@@ -179,9 +180,10 @@ input {
     border-color: rgb(155, 197, 61);
     border-image: initial;
     border-radius: 15px;
-    padding: 1.5em 1.5em 0em 1.5em;
-    margin: 0;
+    padding: 1.5em;
+    margin-bottom: 2em;
 }
+
 .five-day-forecast * {
     margin: .1em;
 }
@@ -219,6 +221,18 @@ input {
     float: right;
 
 }
+
+.five-day-forecast {
+    margin-bottom: 30px;
+}
+
+.forecast-hero-div {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
 /*FOOTER*/
 footer {
     display: flex;
