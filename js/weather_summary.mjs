@@ -92,4 +92,37 @@ class WeatherSummary {
 const weather_summary_placeholder = new WeatherSummary("51.5085", "-0.1257", "metric");
 weather_summary_placeholder.init();
 
+// ////////////////////////////////////
+// // TEST
+// // create an instance of class from the user's location from the search bar
 
+// // Function to handle user input from the search bar
+// async function handleSearch(event) {
+//     event.preventDefault();
+  
+//     // Get the location input from the user
+//     const location = document.getElementById("search").value;
+  
+//     // API endpoint to retrieve location data
+//     const locationEndpoint = `https://api.openweathermap.org/geo/1.0/direct?q=${location}&appid=4491eb92629e7b5e0ac20b732e39129e`;
+  
+//     try {
+//       const locationResponse = await fetch(locationEndpoint);
+//       const locationData = await locationResponse.json();
+  
+//       // Create an instance of the WeatherSummary class
+//       const weatherSummary = new WeatherSummary(
+//         locationData.lat,
+//         locationData.lon,
+//         "metric"
+//       );
+  
+//       // Call the getWeatherData method to retrieve the weather data
+//       weatherSummary.getWeatherData();
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   }
+
+//   const searchForm = document.getElementById("search-form");
+// searchForm.addEventListener("submit", handleSearch);
