@@ -7,7 +7,7 @@ async function convertToJson(res) {
     }
   }
 
-class Maps {
+export default class Maps {
     constructor() {
         this.apiKey = "4491eb92629e7b5e0ac20b732e39129e";
         this.rainMapURL = "";

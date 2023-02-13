@@ -8,7 +8,7 @@ async function convertToJson(res) {
     }
   }
 
-class WeatherSummary {
+export default class WeatherSummary {
     constructor(lat, long, deg) {
         this.latitude = lat;
         this.longitude = long;

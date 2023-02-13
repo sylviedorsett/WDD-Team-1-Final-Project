@@ -1,3 +1,6 @@
+//Import all Classes
+import {getLocalStorage, setLocalStorage} from "./utils.mjs";
+
 // AUTOSUGGESTS LOCATIONS AS YOU TYPE IN THE SEARCH BAR
 
 const searchInput = document.getElementById("search-input");
@@ -56,11 +59,16 @@ suggestList.innerHTML = "";
 
 // FUNCTION TO RETRIEVE THE LOCATION ENTERED BY THE USER
 function getLocation() {
-const location = searchInput.value;
+const location = searchInput.value.split(',')[0];
+
 
 // Confirm the city is in a compatible format
 if (!location.match(/^[a-zA-Z\s]+$/)) {
 throw new Error(`Invalid city format: ${location}`);
+}
+else {
+    setLocalStorage("city", location);
+    console.log(getLocalStorage("city"));
 }
 return location;
 }
