@@ -215,6 +215,13 @@ input {
     margin-bottom: 30px;
 }
 
+.forecast-hero-div {
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
 /*FOOTER*/
 footer {
     display: flex;

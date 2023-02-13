@@ -12,9 +12,13 @@
         flex-direction: column;
         height: 400px;
         width: 150px;
+        margin-right: 2em;
     }
 
-    
+
+    /*Hidden Sections for 3hr forecast
+    class names: five-day-forecast, hidden, Saturday
+    */
 
    
     /*5 Day Forecast Grids etc.

@@ -52,7 +52,6 @@ class Forecast {
 
     //A function that returns a string literal to populate the five-day-forecast container
     renderSummary(number) {
-        
         return `<h3 id="day-${number}"></h3>
         <p>High:<span id="high-temp-${number}"></span>°${this.degreeSymbol}</p>
         <p>Low:<span id="low-temp-${number}"></span>°${this.degreeSymbol}</p>
@@ -73,8 +72,10 @@ class Forecast {
         let wind_speeds = [];
         let average_wind_speed = 0;
         let dayNumber = 0
-        for(let i in dataObject.list) {
 
+        console.log(dataObject.list);
+
+        for(let i in dataObject.list) {
             //Use destructoring to enable readable code and pull specific properties from our object
             //getting the data from the dataObject.list, since this is a for loop, each const represents an individual (3) hourly forecast value
             const {temp_max, temp_min } = dataObject.list[i].main;
@@ -85,17 +86,25 @@ class Forecast {
             const dayOfWeek = sundayThruMondayInator(dt.getDay());
             const timeOfDay = dt.toLocaleTimeString("en-US", {hour: '2-digit'});
 
-            
+
 
             // Taking the averages of the different days' hourly reports to display for the 5 day forecast
             if(!document.getElementById(`five-day-forecast-${dayOfWeek}`)){
                 dayNumber += 1;
+                
+                //div for a carousel
+                let newDiv = document.createElement("div");
+                newDiv.id = `div-day-${dayNumber}`;
+                newDiv.className = `forecast-hero-div`;
+                document.getElementById(`five-day-forecast-sections`).appendChild(newDiv);
+                console.log('added new div');
+
                 if (dayNumber <= 5){
                     let fiveDayHTML = this.renderSummary(dayOfWeek);
                     let dayAverageSummaryForecast = document.createElement("section");
                     dayAverageSummaryForecast.id = `five-day-forecast-${dayOfWeek}`;
                     dayAverageSummaryForecast.className = "five-day-forecast";
-                    document.getElementById(`five-day-forecast-sections`).appendChild(dayAverageSummaryForecast);
+                    document.getElementById(`div-day-${dayNumber}`).appendChild(dayAverageSummaryForecast);
                     document.getElementById(`five-day-forecast-${dayOfWeek}`).innerHTML = fiveDayHTML;
                     document.getElementById(`day-${dayOfWeek}`).textContent = `${dayOfWeek}`;
                     document.getElementById(`show-hide-button-${dayOfWeek}`).addEventListener("click", () => {
@@ -149,7 +158,7 @@ class Forecast {
             newSection.className = `five-day-forecast`;
             newSection.classList.toggle("hidden");
             newSection.classList.add(`${dayOfWeek}`);
-            document.getElementById(`five-day-forecast-sections`).appendChild(newSection);
+            document.getElementById(`div-day-${dayNumber}`).appendChild(newSection);
             document.getElementById(`five-day-forecast-${i}`).innerHTML = htmlString;
             
 
@@ -161,7 +170,6 @@ class Forecast {
             document.getElementById(`high-temp-${i}`).textContent = `\u00A0\u00A0${Math.floor(temp_max)}`;
             document.getElementById(`low-temp-${i}`).parentElement.parentElement.style = "grid-template-rows: auto auto;";
             document.getElementById(`low-temp-${i}`).parentElement.innerHTML = "";
-            
             document.getElementById(`weatherImage-${i}`).src = `http://openweathermap.org/img/wn/${weatherImage}@2x.png`
             document.getElementById(`weathDesc-${i}`).textContent = `${weathDesc}`;
             document.getElementById(`windSpeed-${i}`).textContent = `\u00A0\u00A0${Math.ceil(speed)}`;
