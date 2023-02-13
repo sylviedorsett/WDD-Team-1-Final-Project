@@ -1,3 +1,5 @@
+import { setLocalStorage } from "./utils.mjs";
+
   const cityEl = document.getElementById("city");
   const getLocationBtn = document.getElementById("getLocationBtn");
 
@@ -12,6 +14,9 @@
         );
         const data = await response.json();
         cityEl.innerHTML = `Your current city is: ${data.name}`;
+        setLocalStorage("city", data.name);
+        setLocalStorage("lat", latitude);
+        setLocalStorage("lon", longitude);
     //   }
     //   , (error) => {
     //     switch (error.code) {
