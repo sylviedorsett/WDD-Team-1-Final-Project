@@ -63,7 +63,6 @@ class Forecast {
     
     //A function that dynamically renders the five-day-forecast container
     populateSummaries(dataObject) {
-        // console.log(dataObject);
         // creating variables for the 5-day forecast cards
         let high_temp_max = -1000;
         let low_temp_min = 1000;
@@ -72,8 +71,6 @@ class Forecast {
         let wind_speeds = [];
         let average_wind_speed = 0;
         let dayNumber = 0
-
-        console.log(dataObject.list);
 
         for(let i in dataObject.list) {
             //Use destructoring to enable readable code and pull specific properties from our object
@@ -87,7 +84,6 @@ class Forecast {
             const timeOfDay = dt.toLocaleTimeString("en-US", {hour: '2-digit'});
 
 
-
             // Taking the averages of the different days' hourly reports to display for the 5 day forecast
             if(!document.getElementById(`five-day-forecast-${dayOfWeek}`)){
                 dayNumber += 1;
@@ -97,14 +93,16 @@ class Forecast {
                 newDiv.id = `div-day-${dayNumber}`;
                 newDiv.className = `forecast-hero-div`;
                 document.getElementById(`five-day-forecast-sections`).appendChild(newDiv);
-                console.log('added new div');
+
 
                 if (dayNumber <= 5){
                     let fiveDayHTML = this.renderSummary(dayOfWeek);
                     let dayAverageSummaryForecast = document.createElement("section");
                     dayAverageSummaryForecast.id = `five-day-forecast-${dayOfWeek}`;
                     dayAverageSummaryForecast.className = "five-day-forecast";
+
                     document.getElementById(`div-day-${dayNumber}`).appendChild(dayAverageSummaryForecast);
+
                     document.getElementById(`five-day-forecast-${dayOfWeek}`).innerHTML = fiveDayHTML;
                     document.getElementById(`day-${dayOfWeek}`).textContent = `${dayOfWeek}`;
                     document.getElementById(`show-hide-button-${dayOfWeek}`).addEventListener("click", () => {

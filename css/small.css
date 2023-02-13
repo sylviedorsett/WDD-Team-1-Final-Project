@@ -1,8 +1,8 @@
 :root {
-    --darkblue:  "#13293d";
-    --lightblue:  "#5bc0eb";
-    --yellow:  "#fde74c";
-    --green:  "#9bc53d";
+    --darkblue:  #13293d;
+    --lightblue:  #5bc0eb;
+    --yellow:  #fde74c;
+    --green:  #9bc53d;
     --headerFont:  "Spline Sans Mono", monospace;
     --pFont:  "Poppins", sans-serif;
     --font-base:  18px;
@@ -117,6 +117,17 @@ input {
 }
 #search {
     border-radius: 0 15px 15px 0;
+}
+#suggest-list {
+    /* background-color: lightgrey; */
+    min-height: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 15px;
+} #suggest-list li {
+    list-style: none;
+    padding-bottom: 0.2rem;
+    color: var(--darkblue);
 }
 
 /*DEGREE SELECTION*/
