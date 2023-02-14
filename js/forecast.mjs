@@ -10,7 +10,7 @@ async function convertToJson(res) {
     }
   }
 
-export default class Forecast {
+class Forecast {
     constructor(lat, long, deg) {
         this.latitude = lat;
         this.longitude = long;
@@ -94,7 +94,6 @@ export default class Forecast {
                 newDiv.className = `forecast-hero-div`;
                 document.getElementById(`five-day-forecast-sections`).appendChild(newDiv);
 
-
                 if (dayNumber <= 5){
                     let fiveDayHTML = this.renderSummary(dayOfWeek);
                     let dayAverageSummaryForecast = document.createElement("section");
@@ -172,8 +171,6 @@ export default class Forecast {
             document.getElementById(`weathDesc-${i}`).textContent = `${weathDesc}`;
             document.getElementById(`windSpeed-${i}`).textContent = `\u00A0\u00A0${Math.ceil(speed)}`;
         }
-    }  
-        // ***************************End 3-hour Section*****************************************//
 
     // *****************CODE FOR CAROUSEL***************
         //add an active class to the active slide
@@ -242,7 +239,8 @@ export default class Forecast {
         })
 
     }    
-    
+    // ***************************End 3-hour Section*****************************************//
+
 }
 
 
