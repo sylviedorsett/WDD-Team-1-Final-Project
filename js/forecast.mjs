@@ -199,7 +199,7 @@ class Forecast {
             slides.push(slide);
         }
         
-
+        //a function to update which slide is in viewing position
         function updateSlidePosition() {
             for (var i = 1; i < 6; i++) {
                 document.getElementById(`div-day-${i}`).classList.remove(`active-slide`);
