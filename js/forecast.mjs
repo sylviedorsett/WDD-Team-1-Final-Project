@@ -171,6 +171,7 @@ class Forecast {
             document.getElementById(`weathDesc-${i}`).textContent = `${weathDesc}`;
             document.getElementById(`windSpeed-${i}`).textContent = `\u00A0\u00A0${Math.ceil(speed)}`;
         }
+        // ***************************End 3-hour Section*****************************************//
 
     // *****************CODE FOR CAROUSEL***************
         //add an active class to the active slide
@@ -239,7 +240,7 @@ class Forecast {
         })
 
     }    
-    // ***************************End 3-hour Section*****************************************//
+  
 
 }
 
