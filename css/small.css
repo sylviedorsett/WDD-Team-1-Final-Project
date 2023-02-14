@@ -234,6 +234,9 @@ input {
     padding: 0;
 }
 
+.carousel-buttons {
+    display: none;
+}
 /*FOOTER*/
 footer {
     display: flex;
