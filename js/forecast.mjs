@@ -94,7 +94,6 @@ class Forecast {
                 newDiv.className = `forecast-hero-div`;
                 document.getElementById(`five-day-forecast-sections`).appendChild(newDiv);
 
-
                 if (dayNumber <= 5){
                     let fiveDayHTML = this.renderSummary(dayOfWeek);
                     let dayAverageSummaryForecast = document.createElement("section");
@@ -172,6 +171,73 @@ class Forecast {
             document.getElementById(`weathDesc-${i}`).textContent = `${weathDesc}`;
             document.getElementById(`windSpeed-${i}`).textContent = `\u00A0\u00A0${Math.ceil(speed)}`;
         }
+
+    // *****************CODE FOR CAROUSEL***************
+        //add an active class to the active slide
+        document.getElementById("div-day-1").classList.add("active-slide");
+
+        //buttons for carousel
+        let prev_button = `<button class="carousel-buttons" id="prev-button" data-carousel-button="prev" aria-label="previous slide">&#9664</button>`;
+        let next_button = `<button class="carousel-buttons" id="next-button" data-carousel-button="next" aria-label="next slide">&#9654</button>`;
+        let forecast_div = document.getElementById(`five-day-forecast-sections`);
+        forecast_div.insertAdjacentHTML("afterbegin", prev_button);
+        forecast_div.insertAdjacentHTML("beforeend", next_button);
+
+        //create an array for all the slides/containers
+        let slide_position = 1;
+        const slides = [];
+
+        for (var i = 1; i < 6; i++) {
+            let slide = document.getElementById(`div-day-${i}`);
+            if (i === 1) {
+                slide.classList.add('active-slide');
+            }
+            else {
+                slide.classList.add(`hidden-slide`);
+            }
+            
+            slides.push(slide);
+        }
+        
+
+        function updateSlidePosition() {
+            for (var i = 1; i < 6; i++) {
+                document.getElementById(`div-day-${i}`).classList.remove(`active-slide`);
+                document.getElementById(`div-day-${i}`).classList.remove(`hidden-slide`);
+
+                if (i === slide_position) {
+                    slides[slide_position-1].classList.add('active-slide');
+                }
+                else {
+                    document.getElementById(`div-day-${i}`).classList.add(`hidden-slide`);
+                }
+            };
+        }
+
+        //add event listeners to buttons
+        document.getElementById("next-button").addEventListener("click",() => {
+            if(slide_position === slides.length){
+                slide_position = 1;
+                //console.log(slide_position);
+            }
+            else {
+                slide_position++;
+                //console.log(slide_position);
+            };
+            updateSlidePosition();
+        })
+        document.getElementById("prev-button").addEventListener("click",() => {
+            if(slide_position === 1){
+                slide_position = slides.length;
+                //console.log(slide_position);
+            }
+            else {
+                slide_position--;
+                //console.log(slide_position);
+            }
+            updateSlidePosition();
+        })
+
     }    
     // ***************************End 3-hour Section*****************************************//
 
