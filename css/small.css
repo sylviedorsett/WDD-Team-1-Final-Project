@@ -101,6 +101,10 @@ section div {
     padding: 0.5rem 3rem;
 }
 
+.location {
+    margin-top: 2rem;
+}
+
 /*SEARCH*/
 .search-form {
     display: flex;
@@ -115,22 +119,33 @@ input {
     border-radius: 15px 0 0 15px;
     box-shadow: rgb(19, 41, 61) 0px 0px 15px;
 }
+
 #search {
     border-radius: 0 15px 15px 0;
+
 }
 #suggest-list {
     /* background-color: lightgrey; */
     min-height: 1rem;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     border-radius: 15px;
-} #suggest-list li {
+    margin-bottom: 0;
+} 
+
+#suggest-list li {
     list-style: none;
-    padding-bottom: 0.2rem;
+    padding-bottom: 0;
     color: var(--darkblue);
     cursor: pointer;
+    margin-bottom: 0;
 }
-
+.search {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
 /*DEGREE SELECTION*/
 .degree-type {
     display: flex;
