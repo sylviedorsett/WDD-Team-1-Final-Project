@@ -27,7 +27,7 @@
         <main class="main">
            <section class="location">
                 <h3>To access weather using your location click here:</h3>
-                <button class="user-location">Access My Current Location</button>
+                <button class="user-location" id="getLocationBtn">Access My Current Location</button><span id="city"></span>
                 <h3>or</h3>
                 <!--Search Bar-->
                 <section class="search">
@@ -73,10 +73,12 @@
         </footer>
         <script src="js/main.js"></script>
         <script src="js/header_footer.js"></script>
-        <script src="js/weather_summary.mjs"></script>
-        <script src="js/maps.mjs"></script>
-        <script src="js/search.js"></script>
+        <script src="js/weather_summary.mjs" type="module"></script>
+        <script src="js/maps.mjs" type="module"></script>
+        <script src="js/search.mjs" type="module"></script>
         <script src="js/forecast.mjs" type="module"></script>
-        <script src="js/carousel.mjs" defer></script>
+        <script src="js/current_location.mjs" type="module"></script>
+        <script src="js/getAPI.mjs" type="module"></script>
+
     </body>
 </html>

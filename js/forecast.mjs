@@ -10,7 +10,7 @@ async function convertToJson(res) {
     }
   }
 
-class Forecast {
+export default class Forecast {
     constructor(lat, long, deg) {
         this.latitude = lat;
         this.longitude = long;
