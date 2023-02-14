@@ -6,7 +6,7 @@
         flex-direction: row;
         margin: 0;
         width: 600px;
-        height: 500px;
+        height: 100%;
         position: relative;
         padding: 2em;
     }
@@ -32,7 +32,7 @@
     .carousel-buttons {
         display: block;
         position: absolute;
-        top: 50%;
+        top: 210px;
         z-index: 2;
         transform: translateY(-50%);
         margin: .5em;
@@ -46,7 +46,6 @@
         right: .5rem;
     }
 
-  
 
     /*Maps*/
     .maps {
