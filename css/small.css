@@ -14,7 +14,10 @@ html {
     line-height: 1.5;
     font-family: "Spline Sans Mono", monospace;
 }
-
+button:hover {
+    background-color: rgb(187, 240, 73);
+    box-shadow: rgb(19, 41, 61) 0px 0px 20px;
+}
 /*BODY*/
 body {
     color: rgb(19, 41, 61);
